@@ -1,0 +1,4 @@
+/.metadata
+*.class
+target
+/eventclock-model/src/main/java-gen

@@ -1,0 +1,63 @@
+package de.stango.eventcalendar.model
+
+import org.joda.time.DateTime
+
+type DateTime wraps DateTime
+create
+{
+	if ( it != null ) {
+			org.joda.time.DateTime.parse(it, de.stango.eventcalendar.model.io.Formats.DATE_TIME_FORMATTER);
+	}
+}
+convert
+{
+	if( it != null )
+	{
+		it.toString(de.stango.eventcalendar.model.io.Formats.DATE_TIME_FORMATTER);
+	}
+}
+
+type RecurrenceRule wraps RecurrenceRule
+create
+{
+	if (it != null) {
+		new RecurrenceRule(it);
+	}
+}
+convert
+{
+	if (it!=null) {
+		it.toString();
+	}
+}
+
+class EventProfile {
+	String version
+	String name
+	String description
+	DateTime lastServerUpdate
+	contains Event[] events opposite profile
+}
+
+class Event  {
+	id String uid
+	DateTime starts
+	DateTime ends
+	RecurrenceRule recurrenceRule
+	String location
+	String summary
+	container EventProfile profile opposite events
+	contains EventOccurrence[] occurrences opposite event
+}
+
+class EventOccurrence {
+	DateTime starts
+	DateTime ends
+	container Event event opposite occurrences
+}
+
+class ConnectionSetup {
+	String connectionAddress
+	String userName
+	String password
+}
