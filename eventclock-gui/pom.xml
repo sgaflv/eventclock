@@ -12,5 +12,5 @@
 			<version>2.9.3</version>
 		</dependency>
 	</dependencies>
-	<artifactId>fx-gui</artifactId>
+	<artifactId>eventclock-gui</artifactId>
 </project>
