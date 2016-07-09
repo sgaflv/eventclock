@@ -1,0 +1,56 @@
+.root {
+	-fx-background-color: linear-gradient(#eaf6fd 0%, #3D99CC 100%);
+	-fx-background-radius: 20px;
+	-fx-padding: 30;
+}
+
+.text-field { 
+    -fx-background-color: #a9a9a9 , white, white;
+    -fx-background-insets: 0, 1, 2;
+}
+
+.text-field:focused {
+    -fx-background-color: #a9a9a9 , green, white;
+}
+
+.hbox {
+    -fx-background-color: #2f4f4f;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+}
+
+.vbox {
+    -fx-border-color: #2e8b57;
+    -fx-border-width: 2px;
+    -fx-padding: 10;
+    -fx-spacing: 8;
+}
+
+.button { 
+    -fx-background-color: 
+        linear-gradient(#ffd65b, #e68400),
+        linear-gradient(#ffef84, #f2ba44),
+        linear-gradient(#ffea6a, #efaa22),
+        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #654b00;
+    -fx-font-weight: bold; 
+    -fx-font-size: 12px;
+    -fx-padding: 5 20;
+}
+
+.button:focused, .button:hover { 
+    -fx-background-insets: 0,1,2,3,0;
+}
+
+.button:pressed {
+    -fx-background-color: 
+        linear-gradient(#ffd65b, #e68400),
+        linear-gradient(#ffef84, #f2ba44),
+        linear-gradient(#ffea6a, #efaa22),
+        linear-gradient(#eea10b 0%, #f8c202 50%, #ffe657 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+}
+
