@@ -11,6 +11,18 @@
 			<artifactId>joda-time</artifactId>
 			<version>2.9.3</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>3.0</version>
+		</dependency>
+
+<dependency>
+			<groupId>de.stango.eventclock</groupId>
+			<artifactId>model</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
 	<artifactId>eventclock-gui</artifactId>
 </project>

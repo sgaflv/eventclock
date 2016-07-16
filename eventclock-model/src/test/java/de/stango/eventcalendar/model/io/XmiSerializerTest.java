@@ -4,7 +4,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.joda.time.DateTime;
 import org.junit.Test;
 
-import de.stango.eventcalendar.model.ConnectionSetup;
+import de.stango.eventcalendar.model.ConnectionDetails;
 import de.stango.eventcalendar.model.Event;
 import de.stango.eventcalendar.model.EventProfile;
 import de.stango.eventcalendar.model.ModelFactory;
@@ -41,7 +41,7 @@ public class XmiSerializerTest {
 	@Test
 	public void testSetupSaveAndLoad() {
 		ModelFactory factory = new ModelFactoryImpl();
-		ConnectionSetup connection = factory.createConnectionSetup();
+		ConnectionDetails connection = factory.createConnectionDetails();
 		connection.setConnectionAddress("address");
 		connection.setUserName("username");
 		connection.setPassword("passowrd");

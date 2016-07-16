@@ -8,12 +8,18 @@ import java.nio.file.WatchEvent.Kind;
 import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
 
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
+import com.google.inject.name.Named;
+
+@Singleton
 public class StyleWatcher implements Runnable {
 
 	private Path path;
-	private ConnectionDetails refreshSubject;
+	private ConnectionDetailsUI refreshSubject;
 
-	public StyleWatcher(Path path, ConnectionDetails refreshSubject) {
+	@Inject
+	public StyleWatcher(@Named("Resources") Path path, ConnectionDetailsUI refreshSubject) {
 		this.path = path;
 		this.refreshSubject = refreshSubject;
 	}

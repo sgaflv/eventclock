@@ -1,7 +1,9 @@
 package de.stango.eventclock.ui;
 
 
+import com.google.inject.Singleton;
 
+import de.stango.eventcalendar.model.ConnectionDetails;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.geometry.Orientation;
@@ -11,19 +13,17 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class ConnectionDetails {
+@Singleton
+public class ConnectionDetailsUI {
 
-	private static final double WIDTH = 450;
-	private static final double HEIGHT = 300;
+	private static final double WIDTH = 460;
+	private static final double HEIGHT = 250;
 	
 	private final TextField connectionAddress = new TextField("address");
 	private final TextField userName = new TextField("user name");
@@ -47,13 +47,14 @@ public class ConnectionDetails {
 	private double xOffset = 0;
 	private double yOffset = 0;
 
-	public ConnectionDetails(Stage stage) {
+	public ConnectionDetailsUI(Stage stage, ConnectionDetails connectionDetails) {
 		
 		rootPane = new FlowPane(Orientation.VERTICAL);
 		rootPane.setVgap(6);
 		
 		rootPane.getChildren().add(new Text("Connection address:"));
 		rootPane.getChildren().add(connectionAddress);
+		
 		rootPane.getChildren().add(new Text("User name:"));
 		rootPane.getChildren().add(userName);
 		rootPane.getChildren().add(new Text("Password:"));
@@ -88,7 +89,6 @@ public class ConnectionDetails {
 	
 	private void setupMouseEvents(final Stage stage, final Pane pane) {
 		pane.setOnMousePressed(new EventHandler<MouseEvent>() {
-			
 			@Override
 			public void handle(MouseEvent event) {
 				xOffset = stage.getX() - event.getScreenX();

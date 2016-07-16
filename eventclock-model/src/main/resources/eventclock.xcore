@@ -56,8 +56,8 @@ class EventOccurrence {
 	container Event event opposite occurrences
 }
 
-class ConnectionSetup {
+class ConnectionDetails {
 	String connectionAddress
 	String userName
-	String password
+	transient String password
 }
